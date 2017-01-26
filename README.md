@@ -9,3 +9,7 @@
 <h2>Cat Years</h2>
 <p>From Rob Percival's Udemy Course</p>
 <p>Real basic app with simple math to find out Cat's age</p>
+
+<h2>Miracle Pill</h2>
+<p>From Marc Price's Udemy Course</p>
+<p>Very basic app just to learn layouts, constraints, actions, etc</p>

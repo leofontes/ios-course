@@ -24,3 +24,4 @@
 
 <h3>StackView Demo</h3>
 <p>From Marc Price's <a href="https://www.udemy.com/devslopes-ios10/">Udemy</a> iOS 10 Course</p>
+<p>Demo that shows how to use UIStackView to organize elements on screen</p>

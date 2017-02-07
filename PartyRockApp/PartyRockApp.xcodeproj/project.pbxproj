@@ -14,6 +14,8 @@
 		3DB62D041E49DE4900301ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB62D021E49DE4900301ED4 /* LaunchScreen.storyboard */; };
 		3DB62D0F1E49DE4900301ED4 /* PartyRockAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D0E1E49DE4900301ED4 /* PartyRockAppTests.swift */; };
 		3DB62D1A1E49DE4900301ED4 /* PartyRockAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D191E49DE4900301ED4 /* PartyRockAppUITests.swift */; };
+		3DB62D2C1E49F29100301ED4 /* Blanche de la Fontaine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DB62D2B1E49F29100301ED4 /* Blanche de la Fontaine.ttf */; };
+		3DB62D2E1E49F47900301ED4 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D2D1E49F47900301ED4 /* VideoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3DB62D151E49DE4900301ED4 /* PartyRockAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartyRockAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB62D191E49DE4900301ED4 /* PartyRockAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRockAppUITests.swift; sourceTree = "<group>"; };
 		3DB62D1B1E49DE4900301ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB62D2B1E49F29100301ED4 /* Blanche de la Fontaine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blanche de la Fontaine.ttf"; sourceTree = "<group>"; };
+		3DB62D2D1E49F47900301ED4 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +101,15 @@
 		3DB62CF81E49DE4900301ED4 /* PartyRockApp */ = {
 			isa = PBXGroup;
 			children = (
+				3DB62D2A1E49F28100301ED4 /* Files */,
 				3DB62D291E49E05D00301ED4 /* Controller */,
-				3DB62D281E49E05900301ED4 /* View */,
 				3DB62D271E49E05400301ED4 /* Model */,
+				3DB62D281E49E05900301ED4 /* View */,
 				3DB62CF91E49DE4900301ED4 /* AppDelegate.swift */,
-				3DB62CFD1E49DE4900301ED4 /* Main.storyboard */,
 				3DB62D001E49DE4900301ED4 /* Assets.xcassets */,
-				3DB62D021E49DE4900301ED4 /* LaunchScreen.storyboard */,
 				3DB62D051E49DE4900301ED4 /* Info.plist */,
+				3DB62D021E49DE4900301ED4 /* LaunchScreen.storyboard */,
+				3DB62CFD1E49DE4900301ED4 /* Main.storyboard */,
 			);
 			path = PartyRockApp;
 			sourceTree = "<group>";
@@ -145,8 +150,17 @@
 			isa = PBXGroup;
 			children = (
 				3DB62CFB1E49DE4900301ED4 /* MainVC.swift */,
+				3DB62D2D1E49F47900301ED4 /* VideoVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3DB62D2A1E49F28100301ED4 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DB62D2B1E49F29100301ED4 /* Blanche de la Fontaine.ttf */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DB62D041E49DE4900301ED4 /* LaunchScreen.storyboard in Resources */,
+				3DB62D2C1E49F29100301ED4 /* Blanche de la Fontaine.ttf in Resources */,
 				3DB62D011E49DE4900301ED4 /* Assets.xcassets in Resources */,
 				3DB62CFF1E49DE4900301ED4 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB62D2E1E49F47900301ED4 /* VideoVC.swift in Sources */,
 				3DB62CFC1E49DE4900301ED4 /* MainVC.swift in Sources */,
 				3DB62CFA1E49DE4900301ED4 /* AppDelegate.swift in Sources */,
 			);

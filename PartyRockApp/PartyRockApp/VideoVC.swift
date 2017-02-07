@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VideoVC.swift
 //  PartyRockApp
 //
 //  Created by Leo Fontes on 07/02/17.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class VideoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
 }
-

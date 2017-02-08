@@ -16,6 +16,8 @@
 		3DB62D1A1E49DE4900301ED4 /* PartyRockAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D191E49DE4900301ED4 /* PartyRockAppUITests.swift */; };
 		3DB62D2C1E49F29100301ED4 /* Blanche de la Fontaine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DB62D2B1E49F29100301ED4 /* Blanche de la Fontaine.ttf */; };
 		3DB62D2E1E49F47900301ED4 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D2D1E49F47900301ED4 /* VideoVC.swift */; };
+		3DB62D301E49F7AC00301ED4 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D2F1E49F7AC00301ED4 /* PartyCell.swift */; };
+		3DB62D321E49F91700301ED4 /* PartyRock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB62D311E49F91700301ED4 /* PartyRock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		3DB62D1B1E49DE4900301ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB62D2B1E49F29100301ED4 /* Blanche de la Fontaine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blanche de la Fontaine.ttf"; sourceTree = "<group>"; };
 		3DB62D2D1E49F47900301ED4 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		3DB62D2F1E49F7AC00301ED4 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
+		3DB62D311E49F91700301ED4 /* PartyRock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyRock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		3DB62D271E49E05400301ED4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DB62D311E49F91700301ED4 /* PartyRock.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		3DB62D281E49E05900301ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DB62D2F1E49F7AC00301ED4 /* PartyCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			files = (
 				3DB62D2E1E49F47900301ED4 /* VideoVC.swift in Sources */,
 				3DB62CFC1E49DE4900301ED4 /* MainVC.swift in Sources */,
+				3DB62D321E49F91700301ED4 /* PartyRock.swift in Sources */,
+				3DB62D301E49F7AC00301ED4 /* PartyCell.swift in Sources */,
 				3DB62CFA1E49DE4900301ED4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

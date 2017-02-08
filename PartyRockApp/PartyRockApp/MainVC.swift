@@ -43,6 +43,20 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return partyRockArr.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let partyRock = partyRockArr[indexPath.row]
+        
+        performSegue(withIdentifier: "VideoVC", sender: partyRock)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoVC {
+            if let party = sender as? PartyRock {
+                destination.partyRock = party;
+            }
+        }
+    }
+    
     func addDataArr() {
         let p1 = PartyRock(imageURL: "http://youredm.youredm1.netdna-cdn.com/wp-content/uploads/2016/01/oliver-heldens.jpg?x97231", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AiGGFDn7ac4\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Oliver Heldens")
         let p2 = PartyRock(imageURL: "http://media.lessthan3.com/wp-content/uploads/2014/04/steve-angello-lessthan3-e1398526014144.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/watch?v=Z0Z-64pKxC0\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Steve Angello")

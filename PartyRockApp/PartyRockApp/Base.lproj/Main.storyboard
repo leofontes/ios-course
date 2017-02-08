@@ -158,14 +158,44 @@
                                     <constraint firstAttribute="height" constant="375" id="TN5-gN-MDa"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-O2-NcL">
+                                <rect key="frame" x="16" y="433" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nGH-Se-c9u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Blanche-de-la-Fontaine" family="Blanche de la Fontaine" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-1O-WVW">
+                                <rect key="frame" x="138" y="486" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.70588235294117641" green="1" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="X88-sB-Ld1"/>
+                                    <constraint firstAttribute="height" constant="30" id="Z3x-m4-lfP"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="rSF-mp-DOW" eventType="touchUpInside" id="lat-ba-bVi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZNB-bI-C77" secondAttribute="trailing" id="0rx-XI-hiG"/>
+                            <constraint firstItem="yiM-O2-NcL" firstAttribute="leading" secondItem="0J7-40-FZs" secondAttribute="leadingMargin" id="Qd2-bB-8y1"/>
+                            <constraint firstItem="yiM-O2-NcL" firstAttribute="trailing" secondItem="0J7-40-FZs" secondAttribute="trailingMargin" id="ZKF-2Z-LCD"/>
                             <constraint firstItem="ZNB-bI-C77" firstAttribute="leading" secondItem="0J7-40-FZs" secondAttribute="leading" id="ZYw-QI-JOZ"/>
+                            <constraint firstItem="Pme-1O-WVW" firstAttribute="centerX" secondItem="0J7-40-FZs" secondAttribute="centerX" id="fMA-jC-fYC"/>
+                            <constraint firstItem="yiM-O2-NcL" firstAttribute="top" secondItem="ZNB-bI-C77" secondAttribute="bottom" constant="30" id="i7v-GO-3Ns"/>
                             <constraint firstItem="ZNB-bI-C77" firstAttribute="top" secondItem="5Xg-Fa-9oo" secondAttribute="bottom" constant="8" id="mhN-1H-d2a"/>
+                            <constraint firstItem="Pme-1O-WVW" firstAttribute="top" secondItem="yiM-O2-NcL" secondAttribute="bottom" constant="8" id="tBZ-g9-L7i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="yiM-O2-NcL" id="kmf-Dg-vGs"/>
+                        <outlet property="webView" destination="ZNB-bI-C77" id="ejb-0y-yJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ro4-9v-fsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,15 +12,21 @@ class MovieCell: UITableViewCell {
     @IBOutlet var thumb: UIImageView!
     @IBOutlet var name: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(movie: Movie) {
+        self.name.text = movie.originalTitle
+        
+        let url = URL(string: movie.posterPath)!
+        //AsyncTask
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.global().sync {
+                    self.thumb.image = UIImage(data: data)
+                }
+            } catch {
+                print("Error on download")
+            }
+        }
     }
 
 }

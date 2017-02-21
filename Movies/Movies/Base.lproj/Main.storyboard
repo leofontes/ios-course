@@ -33,6 +33,9 @@
                                     <segment title="Favorites"/>
                                 </segments>
                                 <color key="tintColor" red="0.30980392159999998" green="0.54117647059999996" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HGF-g0-cgy"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GEr-XV-0dh">
                                 <rect key="frame" x="16" y="56" width="343" height="603"/>
@@ -46,7 +49,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-GP-ZjM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieposter" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-GP-ZjM">
                                                     <rect key="frame" x="8" y="2" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5hM-XR-jrh"/>
@@ -111,7 +114,26 @@
                     <view key="view" contentMode="scaleToFill" id="uKY-uA-69Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1U-Ig-PHp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hZf-dC-9Q6"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.90196078431372551" green="0.88235294117647056" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="ae7-7p-sEs">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="hJj-rg-uYF"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5725490196078431" green="0.68627450980392157" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="C1U-Ig-PHp" firstAttribute="leading" secondItem="uKY-uA-69Y" secondAttribute="leading" id="BGp-Qp-fNs"/>
+                            <constraint firstAttribute="trailing" secondItem="C1U-Ig-PHp" secondAttribute="trailing" id="cKH-yf-77Z"/>
+                            <constraint firstItem="C1U-Ig-PHp" firstAttribute="top" secondItem="Htw-C5-BM7" secondAttribute="bottom" id="saf-Mi-6pH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oi9-Gr-tJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,4 +141,7 @@
             <point key="canvasLocation" x="1094" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movieposter" width="300" height="437"/>
+    </resources>
 </document>

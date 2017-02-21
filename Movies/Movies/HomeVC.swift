@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var segmentedControl: UISegmentedControl!
@@ -16,13 +17,47 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        genSampleData()
+        
+        downloadPopularMovies {
+            
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    func downloadPopularMovies() {
+    func downloadPopularMovies(completed: @escaping DownloadComplete)  {
+        let popularURL = URL(string: getPopularUrl())!
+        Alamofire.request(popularURL).responseJSON { response in
+            if let dict = response.value as? Dictionary<String, Any> {
+                if let results = dict["results"] as? [Dictionary<String, Any>] {
+                    for obj in results {
+                        let movie = Movie(dict: obj)
+                        self.moviesList.append(movie)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            completed()
+        }
+    }
+    
+    func downloadUpcomingMovies(completed: @escaping DownloadComplete) {
+        let upcomingURL = URL(string: getUpcomingUrl())!
+        Alamofire.request(upcomingURL).responseJSON { response in
+            if let dict = response.value as? Dictionary<String, Any> {
+                if let results = dict["results"] as? [Dictionary<String, Any>] {
+                    for obj in results {
+                        let movie = Movie(dict: obj)
+                        self.moviesList.append(movie)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchFavoriteMovies() {
         
     }
     
@@ -44,9 +79,33 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-    func genSampleData() {
-        let m1: Movie = Movie(id: "1", originalTitle: "Titanic", posterPath: "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg", overview: "", voteAverage: 4.0, releaseDate: "")
-        moviesList.append(m1)
+    func fetchCatalog() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            downloadPopularMovies {
+                self.tableView.reloadData()
+            }
+            break
+        case 1:
+            downloadUpcomingMovies {
+                self.tableView.reloadData()
+            }
+            break
+        case 2:
+            fetchFavoriteMovies()
+            tableView.reloadData()
+            break
+        default:
+            downloadPopularMovies {
+                
+            }
+        }
+    }
+    
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        moviesList.removeAll(keepingCapacity: false)
+        fetchCatalog()
     }
 }
 

@@ -14,8 +14,8 @@ class MovieCell: UITableViewCell {
     
     func configureCell(movie: Movie) {
         self.name.text = movie.originalTitle
-        
-        let url = URL(string: movie.posterPath)!
+        self.thumb.image = #imageLiteral(resourceName: "movieposter")
+        let url = URL(string: "\(BASE_IMAGE_PATH)\(movie.posterPath)")!
         //AsyncTask
         DispatchQueue.global().async {
             do {

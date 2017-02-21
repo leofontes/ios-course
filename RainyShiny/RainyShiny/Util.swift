@@ -17,8 +17,8 @@ let API_KEY         = "f0fd56c7ca410576e8dd1de704add1fb"
 let COUNT           = "&cnt=10"
 
 
-let CURRENT_WEATHER_URL = "\(BASE_URL_CURR)\(LATITUDE)0\(LONGITUDE)0\(APP_ID)\(API_KEY)"
-let FORECAST_URL        = "\(BASE_URL_FORE)\(LATITUDE)0\(LONGITUDE)0\(COUNT)\(APP_ID)\(API_KEY)"
+let CURRENT_WEATHER_URL = "\(BASE_URL_CURR)\(LATITUDE)\(Location.sharedInstance.latitude)\(LONGITUDE)\(Location.sharedInstance.longitude)\(APP_ID)\(API_KEY)"
+let FORECAST_URL        = "\(BASE_URL_FORE)\(LATITUDE)\(Location.sharedInstance.latitude)\(LONGITUDE)\(Location.sharedInstance.longitude)\(COUNT)\(APP_ID)\(API_KEY)"
 
 typealias DownloadComplete = () -> ()
 

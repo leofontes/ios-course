@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Movie {
-    var _id: String!
+    var _id: Int!
     var _originalTitle: String!
     var _posterPath: String!
     var _overview: String!
@@ -20,7 +20,28 @@ class Movie {
     //Constructors
     init() {}
     
-    init(id: String, originalTitle: String, posterPath: String, overview: String, voteAverage: Double, releaseDate: String) {
+    init(dict: Dictionary<String, Any>) {
+        if let id = dict["id"] as? Int {
+            self.id = id
+        }
+        if let originalTitle = dict["original_title"] as? String {
+            self.originalTitle = originalTitle
+        }
+        if let posterPath = dict["backdrop_path"] as? String {
+            self.posterPath = posterPath
+        }
+        if let overview = dict["overview"] as? String {
+            self.overview = overview
+        }
+        if let voteAverage = dict["vote_average"] as? Double {
+            self.voteAverage = voteAverage
+        }
+        if let releaseDate = dict["release_date"] as? String {
+            self.releaseDate = releaseDate
+        }
+    }
+    
+    init(id: Int, originalTitle: String, posterPath: String, overview: String, voteAverage: Double, releaseDate: String) {
         self.id = id
         self.originalTitle = originalTitle
         self.posterPath = posterPath
@@ -30,10 +51,10 @@ class Movie {
     }
     
     //Getters and Setters
-    var id: String {
+    var id: Int {
         get {
             if _id == nil {
-                _id = ""
+                _id = 0
             }
             return _id
         }

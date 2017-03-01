@@ -34,6 +34,11 @@
 <p>A functional Pokedex based on the <a href="http://pokeapi.co/">PokeAPI</a>.</p>
 <p>On this app I practiced API calls using Alamofire, parsing CSV files to fetch some basic data, stackviews and a lot more.</p>
 
+<h3>Pitch Perfect</h3>
+<p>From Udacity's <a href="https://udacity.com/course/intro-to-ios-app-development-with-swift--ud585">Udemy</a> Intro to iOS App Development with Swift Course</p>
+<p></p>
+<p></p>
+
 <h2>Demos</h2>
 
 <h3>ScrollView Demo</h3>

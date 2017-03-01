@@ -249,7 +249,22 @@ class Pokemon {
                 if let evolutions = dict["evolutions"] as? [Dictionary<String, Any>] , evolutions.count > 0 {
                     if let nextEvolution = evolutions[0]["to"] as? String {
                         if nextEvolution.range(of: "mega") == nil {
-                            self.next
+                            self.nextEvolutionName = nextEvolution
+                            
+                            if let uri = evolutions[0]["resource_uri"] as? String {
+                                let newStr = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                let nextEvoId = newStr.replacingOccurrences(of: "/", with: "")
+                                
+                                self.nextEvolutionId = nextEvoId
+                                
+                                if let lvlExist = evolutions[0]["level"] {
+                                    if let lvl = lvlExist as? Int {
+                                        self.nextEvolutionLevel = "\(lvl)"
+                                    }
+                                } else {
+                                    self.nextEvolutionLevel = ""
+                                }
+                            }
                         }
                     }
                 }

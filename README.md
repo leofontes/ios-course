@@ -29,6 +29,11 @@
 <p>App that lists dream purchases on different stores, mainly to learn about CoreData.</p>
 <p>As a challenge I implemented the Item Category as an extra, not shown on the tutorial.</p>
 
+<h3>Pokedex</h3>
+<p>From Marc Price's <a href="https://www.udemy.com/devslopes-ios10/">Udemy</a> iOS 10 Course</p>
+<p>A functional Pokedex based on the <a href="http://pokeapi.co/">PokeAPI</a>.</p>
+<p>On this app I practiced API calls using Alamofire, parsing CSV files to fetch some basic data, stackviews and a lot more.</p>
+
 <h2>Demos</h2>
 
 <h3>ScrollView Demo</h3>

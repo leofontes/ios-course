@@ -10,6 +10,7 @@ import XCTest
 @testable import BridFlix
 
 class BridFlixTests: XCTestCase {
+    var loginVC: LoginVC!
     
     override func setUp() {
         super.setUp()

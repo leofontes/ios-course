@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginVC: UIViewController {
+
+    var usernameTF: UITextField?
+    var passwordTF: UITextField?
+    var submitBtn: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,16 +22,38 @@ class LoginVC: UIViewController {
     }
     
     func submitPressed() {
+        let registerURL: URL = URL(string: "\(NetworkUtil.API_BASE_URL)\(NetworkUtil.API_REGISTER)")!
+        Alamofire.request(registerURL, method: .post, parameters: getParameters(), encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            if let JSON = response.result.value as? Dictionary<String, String> {
+                //Store the token for later use
+                NetworkUtil.setToken(token: JSON["token"]!)
+                
+                //Change screen
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "movielistvc") as! MovieListVC
+                self.show(vc, sender: JSON["userName"]!)
+            }
+        }
+    }
+    
+    func getParameters() -> Dictionary<String, Any> {
+        return [
+            NetworkUtil.BODY_USERNAME : usernameTF!.text as Any,
+            NetworkUtil.BODY_PASSWORD : passwordTF!.text as Any
+        ]
         
     }
     
     func setupUI() {
         self.view.backgroundColor = UIColor.orange
         
+        usernameTF = usernameTextField
+        passwordTF = passwordTextField
+        submitBtn = submitButton
+        
         self.view.addSubview(logoImageView)
-        self.view.addSubview(usernameTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(submitButton)
+        self.view.addSubview(usernameTF!)
+        self.view.addSubview(passwordTF!)
+        self.view.addSubview(submitBtn!)
         
         self.view.setNeedsUpdateConstraints()
     }

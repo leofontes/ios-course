@@ -46,7 +46,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-//        ##### TEST DATA FOR STORES #####
+//        //##### TEST DATA FOR STORES #####
 //        let store = Store(context: context)
 //        store.name = "Amazon"
 //        let store2 = Store(context: context)
@@ -60,8 +60,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 //        let store6 = Store(context: context)
 //        store6.name = "Calvin Klein"
 //        ad.saveContext()
-        
-//        ##### TEST DATA FOR CATEGORIES #####
+//        
+//        //##### TEST DATA FOR CATEGORIES #####
 //        let cat1 = ItemType(context: context)
 //        cat1.type = "Cars"
 //        let cat2 = ItemType(context: context)

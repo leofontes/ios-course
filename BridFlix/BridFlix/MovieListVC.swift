@@ -13,10 +13,16 @@ class MovieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     private var moviesArr: [Movie] = [Movie]()
     private var filteredMoviesArr: [Movie] = [Movie]()
     private var inSearchMode:Bool = false
+    
+    private let CASE_NORMAL : Int = 1
+    private let CASE_FILTERED : Int = 2
+    private let SORT_ASC : Int = 1
+    private let SORT_DSC : Int = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +71,17 @@ class MovieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             movie = moviesArr[indexPath.row]
         }
         
-        
+        performSegue(withIdentifier: "movieSelected", sender: movie)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieSelected" {
+            if let destination = segue.destination as? DetailVC {
+                if let movie = sender as? Movie {
+                    destination.movie = movie
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,4 +111,53 @@ class MovieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    func sortArray(array: Int, sortOption: Int) {
+        if array == self.CASE_NORMAL {
+            if sortOption == self.SORT_ASC {
+                moviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
+                    first.title < second.title
+                })
+            } else if sortOption == self.SORT_DSC {
+                moviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
+                    first.title > second.title
+                })
+            }
+        } else if array == self.CASE_FILTERED {
+            if sortOption == self.SORT_ASC {
+                filteredMoviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
+                    first.title < second.title
+                })
+            } else if sortOption == self.SORT_DSC {
+                filteredMoviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
+                    first.title > second.title
+                })
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if inSearchMode {
+                sortArray(array: self.CASE_FILTERED, sortOption: self.SORT_ASC)
+            } else {
+                sortArray(array: self.CASE_NORMAL, sortOption: self.SORT_ASC)
+            }
+            break
+        case 1:
+            if inSearchMode {
+                sortArray(array: self.CASE_FILTERED, sortOption: self.SORT_DSC)
+            } else {
+                sortArray(array: self.CASE_NORMAL, sortOption: self.SORT_DSC)
+            }
+            break
+        default:
+            //dosomething
+            break
+        }
+    }
+    
 }

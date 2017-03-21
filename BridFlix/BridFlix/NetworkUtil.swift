@@ -13,9 +13,13 @@ class NetworkUtil {
     static var API_MOVIES   :String = "movies"
     static var API_REGISTER :String = "register"
     static var API_TOKEN    :String = "?token="
+    static var API_REVIEWS  :String = "/reviews"
     
-    static var BODY_USERNAME :String = "userName"
-    static var BODY_PASSWORD :String = "password"
+    static var BODY_USERNAME    :String = "userName"
+    static var BODY_PASSWORD    :String = "password"
+    static var BODY_DESCRIPTION :String = "description"
+    static var BODY_STAR        :String = "star"
+    static var BODY_VALUE       :String = "value"
     
     static func buildRegisterRequest() -> URL {
         return URL(string: "\(API_BASE_URL)\(API_REGISTER)")!
@@ -23,6 +27,14 @@ class NetworkUtil {
     
     static func buildMoviesRequest() -> URL {
         return URL(string: "\(API_BASE_URL)\(API_MOVIES)\(API_TOKEN)\(getToken())")!
+    }
+    
+    static func buildMovieWithIdRequest(movieId: Int) -> URL {
+        return URL(string: "\(API_BASE_URL)\(API_MOVIES)/\(movieId)\(API_TOKEN)\(getToken())")!
+    }
+    
+    static func buildReviewRequest(movieId: Int) -> URL {
+        return URL(string: "\(API_BASE_URL)\(API_MOVIES)/\(movieId)\(API_REVIEWS)\(API_TOKEN)\(getToken())")!
     }
     
     static var TOKEN_KEY :String = "token"

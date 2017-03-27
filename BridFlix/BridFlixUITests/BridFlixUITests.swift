@@ -31,6 +31,16 @@ class BridFlixUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        let enterYourUsernameTextField = app.textFields["Enter your username.."]
+        enterYourUsernameTextField.tap()
+        enterYourUsernameTextField.typeText("leo")
+        
+        let enterYourPasswordSecureTextField = app.secureTextFields["Enter your password.."]
+        enterYourPasswordSecureTextField.tap()
+        enterYourPasswordSecureTextField.tap()
+        enterYourPasswordSecureTextField.typeText("leo")
+        app.buttons["REGISTER / JOIN"].tap()
     }
     
 }

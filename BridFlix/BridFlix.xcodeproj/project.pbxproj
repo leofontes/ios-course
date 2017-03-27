@@ -25,6 +25,11 @@
 		3D1170671E805A9E006615D7 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1170661E805A9E006615D7 /* Review.swift */; };
 		3D1170691E805C2D006615D7 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1170681E805C2D006615D7 /* ReviewCell.swift */; };
 		3D11706B1E8186C3006615D7 /* AddReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11706A1E8186C3006615D7 /* AddReviewVC.swift */; };
+		3D35B2161E82E8C500A98A59 /* TestMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B2151E82E8C500A98A59 /* TestMovie.swift */; };
+		3D35B2191E82EAAD00A98A59 /* TestCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B2181E82EAAD00A98A59 /* TestCast.swift */; };
+		3D35B21B1E82EB5500A98A59 /* TestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21A1E82EB5500A98A59 /* TestReview.swift */; };
+		3D35B21E1E82EC5900A98A59 /* TestMovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */; };
+		3D35B2201E82F6E400A98A59 /* TestAddReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */; };
 		B154CF5BECD7020AA1F2EC08 /* Pods_BridFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5D55761382E7F59043C9DE /* Pods_BridFlix.framework */; };
 		E2A94438A050D3C244237348 /* Pods_BridFlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615272CA93FED82B28877D3A /* Pods_BridFlixUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +76,11 @@
 		3D1170661E805A9E006615D7 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		3D1170681E805C2D006615D7 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		3D11706A1E8186C3006615D7 /* AddReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewVC.swift; sourceTree = "<group>"; };
+		3D35B2151E82E8C500A98A59 /* TestMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMovie.swift; sourceTree = "<group>"; };
+		3D35B2181E82EAAD00A98A59 /* TestCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCast.swift; sourceTree = "<group>"; };
+		3D35B21A1E82EB5500A98A59 /* TestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReview.swift; sourceTree = "<group>"; };
+		3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMovieListVC.swift; sourceTree = "<group>"; };
+		3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAddReviewVC.swift; sourceTree = "<group>"; };
 		45B0B2AD1032A9CB9A2EA741 /* Pods-BridFlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BridFlixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BridFlixUITests/Pods-BridFlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52DE427405EC3D50C7050D58 /* Pods-BridFlixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BridFlixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BridFlixTests/Pods-BridFlixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5822447BF01E884E0EA093B6 /* Pods_BridFlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BridFlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +160,8 @@
 		3D11703A1E79A601006615D7 /* BridFlixTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D35B21C1E82EC4900A98A59 /* Controller */,
+				3D35B2171E82E8CE00A98A59 /* Model */,
 				3D11703B1E79A601006615D7 /* BridFlixTests.swift */,
 				3D11703D1E79A601006615D7 /* Info.plist */,
 			);
@@ -202,6 +214,25 @@
 				3D11705E1E7B2183006615D7 /* NetworkUtil.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		3D35B2171E82E8CE00A98A59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D35B2151E82E8C500A98A59 /* TestMovie.swift */,
+				3D35B2181E82EAAD00A98A59 /* TestCast.swift */,
+				3D35B21A1E82EB5500A98A59 /* TestReview.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3D35B21C1E82EC4900A98A59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */,
+				3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		63408A7325B545E9AABBD7E7 /* Pods */ = {
@@ -530,7 +561,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D35B21E1E82EC5900A98A59 /* TestMovieListVC.swift in Sources */,
+				3D35B2161E82E8C500A98A59 /* TestMovie.swift in Sources */,
+				3D35B2201E82F6E400A98A59 /* TestAddReviewVC.swift in Sources */,
+				3D35B21B1E82EB5500A98A59 /* TestReview.swift in Sources */,
 				3D11703C1E79A601006615D7 /* BridFlixTests.swift in Sources */,
+				3D35B2191E82EAAD00A98A59 /* TestCast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

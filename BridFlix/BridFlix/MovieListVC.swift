@@ -19,8 +19,6 @@ class MovieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     private var filteredMoviesArr: [Movie] = [Movie]()
     private var inSearchMode:Bool = false
     
-    private let CASE_NORMAL : Int = 1
-    private let CASE_FILTERED : Int = 2
     private let SORT_ASC : Int = 1
     private let SORT_DSC : Int = 2
     
@@ -112,52 +110,42 @@ class MovieListVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return 150
     }
     
-    func sortArray(array: Int, sortOption: Int) {
-        if array == self.CASE_NORMAL {
-            if sortOption == self.SORT_ASC {
-                moviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
-                    first.title < second.title
-                })
-            } else if sortOption == self.SORT_DSC {
-                moviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
-                    first.title > second.title
-                })
-            }
-        } else if array == self.CASE_FILTERED {
-            if sortOption == self.SORT_ASC {
-                filteredMoviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
-                    first.title < second.title
-                })
-            } else if sortOption == self.SORT_DSC {
-                filteredMoviesArr.sort(by: { (first: Movie, second: Movie) -> Bool in
-                    first.title > second.title
-                })
-            }
+    func sortArray(sortOption: Int, movieArr: [Movie]) -> [Movie] {
+        if sortOption == self.SORT_ASC {
+            return movieArr.sorted(by: { (first: Movie, second: Movie) -> Bool in
+                first.title < second.title
+            })
+        } else if sortOption == self.SORT_DSC {
+            return movieArr.sorted(by: { (first: Movie, second: Movie) -> Bool in
+                first.title > second.title
+            })
         }
         
-        self.tableView.reloadData()
+        return movieArr
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             if inSearchMode {
-                sortArray(array: self.CASE_FILTERED, sortOption: self.SORT_ASC)
+                filteredMoviesArr = sortArray(sortOption: self.SORT_ASC, movieArr: filteredMoviesArr)
             } else {
-                sortArray(array: self.CASE_NORMAL, sortOption: self.SORT_ASC)
+                moviesArr = sortArray(sortOption: self.SORT_ASC, movieArr: moviesArr)
             }
             break
         case 1:
             if inSearchMode {
-                sortArray(array: self.CASE_FILTERED, sortOption: self.SORT_DSC)
+                filteredMoviesArr = sortArray(sortOption: self.SORT_DSC, movieArr: filteredMoviesArr)
             } else {
-                sortArray(array: self.CASE_NORMAL, sortOption: self.SORT_DSC)
+                moviesArr = sortArray(sortOption: self.SORT_DSC, movieArr: moviesArr)
             }
             break
         default:
             //dosomething
             break
         }
+        
+        tableView.reloadData()
     }
     
 }

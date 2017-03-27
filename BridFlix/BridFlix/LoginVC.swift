@@ -23,14 +23,22 @@ class LoginVC: UIViewController {
     
     func submitPressed() {
         let registerURL: URL = URL(string: "\(NetworkUtil.API_BASE_URL)\(NetworkUtil.API_REGISTER)")!
-        Alamofire.request(registerURL, method: .post, parameters: getParameters(), encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-            if let JSON = response.result.value as? Dictionary<String, String> {
-                //Store the token for later use
-                NetworkUtil.setToken(token: JSON["token"]!)
-                
-                //Change screen
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "movielistvc") as! MovieListVC
-                self.show(vc, sender: JSON["userName"]!)
+        let parameters: Dictionary<String, Any> = getParameters()
+        if parameters[NetworkUtil.BODY_USERNAME] as! String == "" || parameters[NetworkUtil.BODY_PASSWORD] as! String == "" {
+            self.alert(message: "Please fill in both your username and your password", title: "Login Error")
+        } else {
+            Alamofire.request(registerURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+                if let JSON = response.result.value as? Dictionary<String, String> {
+                    //Store the token for later use
+                    NetworkUtil.setToken(token: JSON["token"]!)
+                    
+                    //Change screen
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "movielistvc") as! MovieListVC
+                    self.show(vc, sender: JSON["userName"]!)
+                } else {
+                    //Let the user know if there's an error
+                    self.alert(message: "Please check your connection, your username and your password", title: "Login Error")
+                }
             }
         }
     }
@@ -95,6 +103,13 @@ class LoginVC: UIViewController {
         NSLayoutConstraint(item: submitButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
     }
     
+    func alert(message: String, title: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     lazy var logoImageView: UIImageView! = {
         let view = UIImageView()
         view.image = UIImage(named: "popcorn")
@@ -118,6 +133,7 @@ class LoginVC: UIViewController {
         view.borderStyle = .roundedRect
         view.textAlignment = .center
         view.placeholder = "Enter your password.."
+        view.isSecureTextEntry = true
         
         return view
     }()

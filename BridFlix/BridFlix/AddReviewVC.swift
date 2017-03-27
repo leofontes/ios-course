@@ -17,11 +17,10 @@ class AddReviewVC: UIViewController {
     @IBOutlet weak var messageLbl: UILabel!
     
     var movie: Movie!
-    var message: String?
+    var message: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     
@@ -31,13 +30,15 @@ class AddReviewVC: UIViewController {
 
     @IBAction func submitPressed(_ sender: Any) {
         let requestURL: URL = NetworkUtil.buildReviewRequest(movieId: movie.id)
+        let parameters: Dictionary<String, Any> = getParameters()
         
-        if message == nil {
-            Alamofire.request(requestURL, method: .post, parameters: getParameters(), encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        if message.isEmpty {
+            Alamofire.request(requestURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
                 
                 self.dismiss(animated: true, completion: nil)
             }
         } else {
+            messageLbl.text = message
             messageLbl.alpha = CGFloat(floatLiteral: 1.0)
         }
         
@@ -51,7 +52,7 @@ class AddReviewVC: UIViewController {
             message = "Please fill in your rating for the review"
             
         } else {
-           message = nil
+           message = ""
         }
         
         let star: Dictionary<String, Any> = [NetworkUtil.BODY_VALUE : ratingTextField.text as Any]

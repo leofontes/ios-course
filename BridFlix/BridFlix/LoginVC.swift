@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
     
     func submitPressed() {
         let registerURL: URL = URL(string: "\(NetworkUtil.API_BASE_URL)\(NetworkUtil.API_REGISTER)")!
-        let parameters: Dictionary<String, Any> = getParameters()
+        let parameters: Dictionary<String, Any> = getParameters(usernameTF: usernameTF!, passwordTF: passwordTF!)
         if parameters[NetworkUtil.BODY_USERNAME] as! String == "" || parameters[NetworkUtil.BODY_PASSWORD] as! String == "" {
             self.alert(message: "Please fill in both your username and your password", title: "Login Error")
         } else {
@@ -43,10 +43,10 @@ class LoginVC: UIViewController {
         }
     }
     
-    func getParameters() -> Dictionary<String, Any> {
+    func getParameters(usernameTF: UITextField, passwordTF: UITextField) -> Dictionary<String, Any> {
         return [
-            NetworkUtil.BODY_USERNAME : usernameTF!.text as Any,
-            NetworkUtil.BODY_PASSWORD : passwordTF!.text as Any
+            NetworkUtil.BODY_USERNAME : usernameTF.text as Any,
+            NetworkUtil.BODY_PASSWORD : passwordTF.text as Any
         ]
         
     }

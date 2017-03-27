@@ -23,15 +23,23 @@ class TestAddReviewVC: XCTestCase {
     }
     
     func testGetParameters() {
+        viewController.usernameTextField = UITextField()
+        viewController.ratingTextField = UITextField()
+        viewController.reviewTextField = UITextField()
+        
         viewController.usernameTextField.text = "Teste"
         viewController.reviewTextField.text = "Muito bom"
         viewController.ratingTextField.text = "10"
         
-        var dictWithData: Dictionary<String, Any> = [
+        let star: Dictionary<String, Any> = [NetworkUtil.BODY_VALUE : "10" as Any]
+        
+        let dictWithData: Dictionary<String, Any> = [
             NetworkUtil.BODY_USERNAME : "Teste" as Any,
             NetworkUtil.BODY_DESCRIPTION : "Muito bom" as Any,
-            NetworkUtil.BODY_STAR : 10 as Any
+            NetworkUtil.BODY_STAR : star as Any
         ]
+        
+        XCTAssertTrue(NSDictionary(dictionary: dictWithData).isEqual(to: viewController.getParameters(userTF: viewController.usernameTextField, ratingTF: viewController.ratingTextField, reviewTF: viewController.reviewTextField)))
     }
     
 }

@@ -30,6 +30,7 @@
 		3D35B21B1E82EB5500A98A59 /* TestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21A1E82EB5500A98A59 /* TestReview.swift */; };
 		3D35B21E1E82EC5900A98A59 /* TestMovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */; };
 		3D35B2201E82F6E400A98A59 /* TestAddReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */; };
+		3D35B2221E899CD600A98A59 /* TestLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35B2211E899CD600A98A59 /* TestLoginVC.swift */; };
 		B154CF5BECD7020AA1F2EC08 /* Pods_BridFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5D55761382E7F59043C9DE /* Pods_BridFlix.framework */; };
 		E2A94438A050D3C244237348 /* Pods_BridFlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615272CA93FED82B28877D3A /* Pods_BridFlixUITests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		3D35B21A1E82EB5500A98A59 /* TestReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReview.swift; sourceTree = "<group>"; };
 		3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMovieListVC.swift; sourceTree = "<group>"; };
 		3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAddReviewVC.swift; sourceTree = "<group>"; };
+		3D35B2211E899CD600A98A59 /* TestLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLoginVC.swift; sourceTree = "<group>"; };
 		45B0B2AD1032A9CB9A2EA741 /* Pods-BridFlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BridFlixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BridFlixUITests/Pods-BridFlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52DE427405EC3D50C7050D58 /* Pods-BridFlixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BridFlixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BridFlixTests/Pods-BridFlixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5822447BF01E884E0EA093B6 /* Pods_BridFlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BridFlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			children = (
 				3D35B21F1E82F6E400A98A59 /* TestAddReviewVC.swift */,
 				3D35B21D1E82EC5900A98A59 /* TestMovieListVC.swift */,
+				3D35B2211E899CD600A98A59 /* TestLoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D35B21E1E82EC5900A98A59 /* TestMovieListVC.swift in Sources */,
+				3D35B2221E899CD600A98A59 /* TestLoginVC.swift in Sources */,
 				3D35B2161E82E8C500A98A59 /* TestMovie.swift in Sources */,
 				3D35B2201E82F6E400A98A59 /* TestAddReviewVC.swift in Sources */,
 				3D35B21B1E82EB5500A98A59 /* TestReview.swift in Sources */,

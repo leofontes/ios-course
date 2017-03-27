@@ -30,7 +30,7 @@ class AddReviewVC: UIViewController {
 
     @IBAction func submitPressed(_ sender: Any) {
         let requestURL: URL = NetworkUtil.buildReviewRequest(movieId: movie.id)
-        let parameters: Dictionary<String, Any> = getParameters()
+        let parameters: Dictionary<String, Any> = getParameters(userTF: usernameTextField, ratingTF: ratingTextField, reviewTF: reviewTextField)
         
         if message.isEmpty {
             Alamofire.request(requestURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -44,21 +44,21 @@ class AddReviewVC: UIViewController {
         
     }
     
-    func getParameters() -> Dictionary<String, Any> {
-        if let text = usernameTextField.text, text.isEmpty {
+    func getParameters(userTF: UITextField, ratingTF: UITextField, reviewTF: UITextField) -> Dictionary<String, Any> {
+        if let text = userTF.text, text.isEmpty {
             message = "Please fill in your username for the review"
             
-        } else if reviewTextField.text == "" {
+        } else if let rating = ratingTF.text, rating.isEmpty {
             message = "Please fill in your rating for the review"
             
         } else {
            message = ""
         }
         
-        let star: Dictionary<String, Any> = [NetworkUtil.BODY_VALUE : ratingTextField.text as Any]
+        let star: Dictionary<String, Any> = [NetworkUtil.BODY_VALUE : ratingTF.text as Any]
         return [
-            NetworkUtil.BODY_USERNAME : usernameTextField.text as Any,
-            NetworkUtil.BODY_DESCRIPTION : reviewTextField.text as Any,
+            NetworkUtil.BODY_USERNAME : userTF.text as Any,
+            NetworkUtil.BODY_DESCRIPTION : reviewTF.text as Any,
             NetworkUtil.BODY_STAR : star as Any
         ]
         

@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var posterImgView: UIImageView!
@@ -20,6 +20,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var movie: Movie!
     var reviewsArr = [Review]()
     var castArr = [Cast]()
+    var imagePicker: UIImagePickerController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
         navbar.title = movie.title
         descriptionLbl.text = movie.description
@@ -77,6 +81,18 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     @IBAction func addPressed(_ sender: Any) {
         performSegue(withIdentifier: "addReviewSegue", sender: movie)
+    }
+    
+    @IBAction func photoPressed(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            posterImgView.image = img
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

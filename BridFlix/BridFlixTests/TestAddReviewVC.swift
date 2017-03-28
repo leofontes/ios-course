@@ -15,6 +15,7 @@ class TestAddReviewVC: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDown() {
@@ -42,4 +43,14 @@ class TestAddReviewVC: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: dictWithData).isEqual(to: viewController.getParameters(userTF: viewController.usernameTextField, ratingTF: viewController.ratingTextField, reviewTF: viewController.reviewTextField)))
     }
     
+    func testValidateRating() {
+        viewController.ratingTextField = UITextField()
+        viewController.ratingTextField.text = "5"
+        
+        XCTAssertTrue(viewController.validateRating(viewController.ratingTextField))
+        
+        //viewController.ratingTextField.text = "11"
+        
+        //XCTAssertFalse(viewController.validateRating(viewController.ratingTextField))
+    }
 }

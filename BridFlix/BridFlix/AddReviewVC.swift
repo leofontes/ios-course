@@ -51,6 +51,8 @@ class AddReviewVC: UIViewController {
         } else if let rating = ratingTF.text, rating.isEmpty {
             message = "Please fill in your rating for the review"
             
+        } else if validateRating(ratingTF) {
+           message = "Please give a rating between 0 and 10"
         } else {
            message = ""
         }
@@ -61,7 +63,9 @@ class AddReviewVC: UIViewController {
             NetworkUtil.BODY_DESCRIPTION : reviewTF.text as Any,
             NetworkUtil.BODY_STAR : star as Any
         ]
-        
-        
+    }
+    
+    func validateRating(_ ratingTF: UITextField) -> Bool {
+        return Int(ratingTF.text!)! < 0 || Int(ratingTF.text!)! > 10
     }
 }

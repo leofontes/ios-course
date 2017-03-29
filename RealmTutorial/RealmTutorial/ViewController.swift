@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         axisFormatDelegate = self
         
         updateChartWithData()
+        
+        
     }
     
     func updateChartWithData() {
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
     func getVisitorCountsFromDatabase() -> Results<VisitorCount> {
         do {
             let realm = try Realm()
+            print("Path to realm file: " + realm.configuration.fileURL!.absoluteString)
             return realm.objects(VisitorCount.self)
         } catch let error as NSError {
             fatalError(error.localizedDescription)

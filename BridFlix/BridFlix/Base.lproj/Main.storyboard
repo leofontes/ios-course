@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDs-as-u72" id="kBE-OV-SE1">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUk-0N-a85">
@@ -124,7 +124,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lNw-Ks-9hb">
                                 <rect key="frame" x="16" y="116" width="288" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Yxm-qq-BUL"/>
+                                    <constraint firstAttribute="height" constant="30" id="BCO-oI-fvO"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Name"/>
@@ -138,16 +138,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.50196078431372548" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lNw-Ks-9hb" firstAttribute="leading" secondItem="wgg-yX-Che" secondAttribute="leadingMargin" id="2iB-uf-ANS"/>
                             <constraint firstItem="ohe-8T-Wfr" firstAttribute="top" secondItem="16Q-ic-Am5" secondAttribute="bottom" id="5Ni-CA-eiN"/>
                             <constraint firstItem="16Q-ic-Am5" firstAttribute="leading" secondItem="wgg-yX-Che" secondAttribute="leadingMargin" id="MLX-KO-Bk1"/>
-                            <constraint firstItem="lNw-Ks-9hb" firstAttribute="top" secondItem="5l6-BW-8eC" secondAttribute="bottom" id="daL-Un-Qmr"/>
+                            <constraint firstItem="lNw-Ks-9hb" firstAttribute="leading" secondItem="wgg-yX-Che" secondAttribute="leadingMargin" id="Msw-BD-qP7"/>
+                            <constraint firstItem="16Q-ic-Am5" firstAttribute="top" secondItem="lNw-Ks-9hb" secondAttribute="bottom" constant="8" id="Nch-OI-UN4"/>
                             <constraint firstAttribute="trailing" secondItem="5l6-BW-8eC" secondAttribute="trailing" id="ge8-Sb-Bqz"/>
                             <constraint firstItem="16Q-ic-Am5" firstAttribute="trailing" secondItem="wgg-yX-Che" secondAttribute="trailingMargin" id="iC6-fR-jaM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lNw-Ks-9hb" secondAttribute="trailing" id="ngO-qN-9uZ"/>
                             <constraint firstItem="5l6-BW-8eC" firstAttribute="top" secondItem="E5e-I6-Ofu" secondAttribute="bottom" constant="8" id="qxg-ZV-R1T"/>
                             <constraint firstItem="5l6-BW-8eC" firstAttribute="leading" secondItem="wgg-yX-Che" secondAttribute="leading" id="uYO-iX-ecW"/>
-                            <constraint firstItem="16Q-ic-Am5" firstAttribute="top" secondItem="lNw-Ks-9hb" secondAttribute="bottom" constant="8" id="vlb-1v-0bb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lNw-Ks-9hb" secondAttribute="trailing" id="wGF-Ic-oDf"/>
+                            <constraint firstItem="lNw-Ks-9hb" firstAttribute="top" secondItem="5l6-BW-8eC" secondAttribute="bottom" id="yVf-Zv-7ql"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NYq-41-Fcj"/>
@@ -246,7 +246,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="castCell" id="ewT-ps-8yy" userLabel="castCell" customClass="CastCell" customModule="BridFlix" customModuleProvider="target">
-                                                        <rect key="frame" x="73" y="0.0" width="175" height="90"/>
+                                                        <rect key="frame" x="72.5" y="0.0" width="175" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="90"/>
@@ -308,7 +308,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jsc-CX-D6j" id="UMU-aZ-sJy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8V-Kg-3vc">

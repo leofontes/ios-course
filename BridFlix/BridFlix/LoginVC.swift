@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController,  UITextFieldDelegate {
 
     var usernameTF: UITextField?
     var passwordTF: UITextField?
@@ -17,8 +17,10 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        
+        usernameTF?.delegate = self
+        passwordTF?.delegate = self
     }
     
     func submitPressed() {
@@ -110,6 +112,11 @@ class LoginVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     lazy var logoImageView: UIImageView! = {
         let view = UIImageView()
         view.image = UIImage(named: "popcorn")
@@ -134,6 +141,7 @@ class LoginVC: UIViewController {
         view.textAlignment = .center
         view.placeholder = "Enter your password.."
         view.isSecureTextEntry = true
+        
         
         return view
     }()
